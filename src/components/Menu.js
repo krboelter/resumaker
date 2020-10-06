@@ -1,10 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import {Link} from 'react-router-dom'
+
 export default function Menu() {
     return (
         <MainMenu>
-            <ListItem><a>Item One</a></ListItem>
+            <ListItem><Link to=''>Item One</Link></ListItem>
         </MainMenu>
     )
 }
