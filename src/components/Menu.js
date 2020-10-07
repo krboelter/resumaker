@@ -5,17 +5,36 @@ import {Link} from 'react-router-dom'
 
 export default function Menu() {
     return (
-        <MainMenu>
-            <ListItem><Link to=''>Item One</Link></ListItem>
-        </MainMenu>
+        <MenuBar>
+            <H2>Resumaker</H2>
+            <MainMenu>
+                <ListItem><Link to='/home'>Home</Link></ListItem>
+                <ListItem><Link to='/resume'>Resume</Link></ListItem>
+            </MainMenu>
+        </MenuBar>
     )
 }
 
-const MainMenu = styled.ul`
+const MenuBar = styled.div`
     display: flex;
-    justify-content:
+    justify-content: space-between;
+    align-items: center;
+    background-color: orange;
+    height: 75px;
+    padding: 0 15px;
+`
+
+const H2 = styled.h2`
+    font-size: 26px;
+`
+
+const MainMenu = styled.ul`
+    width: 25%;
+    display: flex;
+    justify-content: space-evenly;
 `
 
 const ListItem = styled.li`
     list-style: none;
+    text-decoration: none;
 `
