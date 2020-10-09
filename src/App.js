@@ -4,7 +4,8 @@ import {Route} from 'react-router-dom'
 
 import Home from './components/Home';
 import Menu from './components/Menu';
-import Resume from './components/Resume';
+import MakeIt from './components/MakeIt';
+import PrintIt from './components/PrintIt'
 
 function App() {
     return (
@@ -13,7 +14,8 @@ function App() {
 
             <Route exact path='/' component={Home} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/resume" component={Resume} />
+            <Route exact path="/makeit" component={MakeIt} />
+            <Route exact path="/printit" component={PrintIt} />
         </div>
   );
 }
