@@ -9,7 +9,8 @@ export default function Menu() {
             <H2>Resumaker</H2>
             <MainMenu>
                 <ListItem><Link to='/home'>Home</Link></ListItem>
-                <ListItem><Link to='/resume'>Resume</Link></ListItem>
+                <ListItem><Link to='/makeit'>Make It</Link></ListItem>
+                <ListItem><Link to='/printit'>Print It</Link></ListItem>
             </MainMenu>
         </MenuBar>
     )
