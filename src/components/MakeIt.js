@@ -7,16 +7,24 @@ export default function MakeIt() {
             <H2>Build your resume here!</H2>
             <P>All you need to do is fill out the information below and resumaker will do the rest!</P>
             <Form>
+                <SetContainer>
+                    <Set>
+                        <Label>Fist and Last Name</Label>
+                        <Input
+                            placeholder='Name'
+                        />
+                    </Set>
+                </SetContainer>
                 <Set>
-                    <Label>Fist Name</Label>
+                    <Label>City</Label>
                     <Input
-                        placeholder='First'
+                        placeholder='City'
                     />
                 </Set>
                 <Set>
-                    <Label>Last Name</Label>
+                    <Label>State</Label>
                     <Input
-                        placeholder='Last'
+                        placeholder='State'
                     />
                 </Set>
             </Form>
@@ -39,6 +47,11 @@ const P = styled.p`
     margin: 6px auto;
     text-align: center;
     font-size: 16px;
+`
+
+const SetContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
 `
 
 const Form = styled.form`
