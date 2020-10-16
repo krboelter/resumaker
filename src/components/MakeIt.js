@@ -68,6 +68,7 @@ const Set = styled.div`
 
 const Label = styled.label`
     width: 100%;
+    color: blue;
 `
 
 const Input = styled.input`
