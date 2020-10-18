@@ -1,32 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components'
 
+import InputField from './InputField'
+
 export default function MakeIt() {
+    const [fieldItems, setFieldItems] = useState({
+        name: "",
+        email: "",
+        phone_number: "",
+        city: "",
+        state: ""
+    })
+
     return (
         <Container>
             <H2>Build your resume here!</H2>
             <P>All you need to do is fill out the information below and resumaker will do the rest!</P>
             <Form>
                 <SetContainer>
-                    <Set>
-                        <Label>Fist and Last Name</Label>
-                        <Input
-                            placeholder='Name'
-                        />
-                    </Set>
+                    Personal Information
+                    {Object.values(fieldItems).forEach([key, value] => (
+                        <InputField fieldItem={key}/>
+                    ))}
                 </SetContainer>
-                <Set>
-                    <Label>City</Label>
-                    <Input
-                        placeholder='City'
-                    />
-                </Set>
-                <Set>
-                    <Label>State</Label>
-                    <Input
-                        placeholder='State'
-                    />
-                </Set>
+                <SetContainer>
+                    Links
+                </SetContainer>
+                <SetContainer>
+                    Resume Body
+                </SetContainer>
             </Form>
         </Container>
     )
@@ -50,20 +52,15 @@ const P = styled.p`
 `
 
 const SetContainer = styled.div`
+    width: 33%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 `
 
 const Form = styled.form`
     display: flex;
-    flex-direction: column;
-`
-
-const Set = styled.div`
-    width: 40%;
-    margin: 10px auto;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
 `
 
 const Label = styled.label`
