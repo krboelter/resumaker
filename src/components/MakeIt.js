@@ -5,12 +5,18 @@ import InputField from './InputField'
 
 export default function MakeIt() {
     const [fieldItems, setFieldItems] = useState({
-        name: "",
-        email: "",
-        phone_number: "",
-        city: "",
-        state: ""
+        name: "Ken Boelter",
+        email: "krboelter@gmail.com",
+        phone_number: "208-577-1562",
+        city: "West Jordan",
+        state: "Utah"
     })
+
+    useEffect(() => {
+        Object.entries(fieldItems).forEach(([key, value]) => {
+            console.log(key, value)
+        })
+    }, [])
 
     return (
         <Container>
@@ -19,8 +25,8 @@ export default function MakeIt() {
             <Form>
                 <SetContainer>
                     Personal Information
-                    {Object.values(fieldItems).forEach([key, value] => (
-                        <InputField fieldItem={key}/>
+                    {Object.entries(fieldItems).forEach(([key, value]) => (
+                        <InputField key={key} value={value} />
                     ))}
                 </SetContainer>
                 <SetContainer>

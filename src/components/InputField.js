@@ -3,20 +3,12 @@ import styled from 'styled-components'
 
 export default function InputField(props) {
     return (
-        <Set>
-            <Input
-                placeholder = `${props.fieldItem}`
-            />
-        </Set>
+        <Input
+            placeholder = {props.key}
+            value = {props.value}
+        />
     )
 }
-
-const Set = styled.div`
-    width: 80%;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: column;
-`
 
 const Input = styled.input`
     width: 100%;
