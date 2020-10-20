@@ -12,11 +12,19 @@ export default function MakeIt() {
         state: "Utah"
     })
 
-    useEffect(() => {
-        Object.entries(fieldItems).forEach(([key, value]) => {
-            console.log(key, value)
-        })
-    }, [])
+    const [links, setLinks] = useState({
+        github: "",
+        linkedin: "",
+        portfolio: "",
+    })
+
+    const [resumeBody, setResumeBody] = useState({
+        name: "",
+        email: "",
+        phone_number: "",
+        city: "",
+        state: ""
+    })
 
     return (
         <Container>
@@ -27,16 +35,25 @@ export default function MakeIt() {
                     Personal Information
                     {Object.entries(fieldItems).map(([key, value]) => (
                         <div>
-                            <label>{key}</label>
-                            <InputField key={key} value={value} />
+                            <InputField fieldKey={key} value={value} />
                         </div>
                     ))}
                 </SetContainer>
                 <SetContainer>
                     Links
+                    {Object.entries(links).map(([key, value]) => (
+                        <div>
+                            <InputField fieldKey={key} value={value} />
+                        </div>
+                    ))}
                 </SetContainer>
                 <SetContainer>
                     Resume Body
+                    {Object.entries(resumeBody).map(([key, value]) => (
+                        <div>
+                            <InputField fieldKey={key} value={value} />
+                        </div>
+                    ))}
                 </SetContainer>
             </Form>
         </Container>
