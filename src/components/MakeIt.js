@@ -25,8 +25,11 @@ export default function MakeIt() {
             <Form>
                 <SetContainer>
                     Personal Information
-                    {Object.entries(fieldItems).forEach(([key, value]) => (
-                        <InputField key={key} value={value} />
+                    {Object.entries(fieldItems).map(([key, value]) => (
+                        <div>
+                            <label>{key}</label>
+                            <InputField key={key} value={value} />
+                        </div>
                     ))}
                 </SetContainer>
                 <SetContainer>
